@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-size: xxx-large;
+}
+
+form {
+    width: 100%; /* Full width within max-width */
+    max-width: 800px; /* Restrict maximum width */
+    background-color: #fff; /* Background color for the form */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+legend {
+    font-weight: bold;
+}
+
+.input-group {
+    margin: 100px 0;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-group > label {
+    margin-bottom: 5px;
+}
+
+.input-half {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-half:last-child {
+    margin-right: 0;
+}
+
+input[type="float"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    ;
+}
+
+button:hover {
+    background-color: #4cae4c;
+    border-color: darkgreen;
+}
+
+#result {
+     width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+}

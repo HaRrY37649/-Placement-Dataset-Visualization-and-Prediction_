@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction Program</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .input-group {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .input-group > label {
+            margin-bottom: 5px;
+        }
+        .input-half {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .input-half:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Placement Prediction Program </h1>
+<form action="/prediction" method="POST">
+
+    <fieldset>
+        <legend>Educational Background</legend>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="secondary_school_board">Secondary School Board</label>
+                    <select id="secondary_school_board" name="secondary_school_board" required>
+                        <option value="">Select an option</option>
+                        <option value="central">Central</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="secondary_school_percentage">Secondary School Percentage</label>
+                    <input type="float" id="secondary_school_percentage" name="secondary_school_percentage" min="0" max="100" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="higher_school_board">Higher School Board</label>
+                    <select id="higher_school_board" name="higher_school_board" required>
+                        <option value="">Select an option</option>
+                        <option value="central">Central</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="higher_school_subject">Higher School Subject</label>
+                    <select id="higher_school_subject" name="higher_school_subject" required>
+                        <option value="">Select an option</option>
+                        <option value="Science">Science</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Arts">Arts</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="higher_school_percentage">Higher School Percentage</label>
+                    <input type="float" id="higher_school_percentage" name="higher_school_percentage" min="0" max="100" required>
+                </div>
+            </div>
+
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="undergrad_degree">Undergraduate Degree</label>
+                    <select id="undergrad_degree" name="undergrad_degree" required>
+                        <option value="">Select an option</option>
+                        <option value="Science & Technology">Science & Technology</option>
+                        <option value="Commerce & Management">Commerce & Management</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="degree_percentage">Degree Percentage</label>
+                    <input type="float" id="degree_percentage" name="degree_percentage" min="0" max="100" required>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Additional Information</legend>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="work_experience">Work Experience</label>
+                    <select id="work_experience" name="work_experience" required>
+                        <option value="">Select an option</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="specialisation">Specialisation</label>
+                    <select id="specialisation" name="specialisation" required>
+                        <option value="">Select an option</option>
+                        <option value="Mkt&HR">Mkt&HR</option>
+                        <option value="Mkt&Fin">Mkt&Fin</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="emp_test_percentage">Employment Test Percentage</label>
+                    <input type="float" id="emp_test_percentage" name="emp_test_percentage" min="0" max="100" required>
+                </div>
+            </div>
+
+            <div class="input-half">
+                <div class="input-group">
+                    <label for="mba_percentage">MBA Percentage</label>
+                    <input type="float" id="mba_percentage" name="mba_percentage" min="0" max="100" required>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <button type="submit">Submit
+    </button>
+</form>
+
+<div id="result">
+    {% if result %}
+        <h3>Model Response:</h3>
+        <p><strong>{{ result }}</strong></p>
+    {% endif %}
+</div>
+</body>
+</html>
+
